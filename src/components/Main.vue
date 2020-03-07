@@ -188,7 +188,7 @@ div[id^="group"] table {
               <p>千葉スノーボードクラブはいつでも一緒に楽しく滑れるメンバーを募集しています！<br />
               興味がある方はFacebookにお気軽にメッセージ送ってください！</p>
             </div>
-            <div class="fb-page" data-href="https://www.facebook.com/CHIBASNOWBORD/" data-tabs="timeline,messages" data-width="500px" data-height="" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false">
+            <div class="fb-page" data-href="https://www.facebook.com/CHIBASNOWBORD/" data-tabs="timeline,messages" data-width="500px" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
               <blockquote cite="https://www.facebook.com/CHIBASNOWBORD/" class="fb-xfbml-parse-ignore">
                 <a href="https://www.facebook.com/CHIBASNOWBORD/">千葉スノーボードクラブ</a>
               </blockquote>
