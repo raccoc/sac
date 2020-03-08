@@ -24,13 +24,13 @@
     <div class="collapse navbar-collapse" :class="active ? 'show' : ''">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#about">About US<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#about" @click="active = !active">About US<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#schedule">Schedule</a>
+          <a class="nav-link" href="#schedule" @click="active = !active">Schedule</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#contact" @click="active = !active">Contact</a>
         </li>
       </ul>
     </div>

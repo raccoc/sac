@@ -114,6 +114,13 @@ div[id^="group"] table {
   margin: 0 auto;
   padding: 0;
 }
+div.box-1, div.box-2, div.box-3 {
+  opacity: 0;
+  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+#main {
+  padding-bottom: 36px;
+}
 </style>
 
 <template>
@@ -125,7 +132,7 @@ div[id^="group"] table {
             </div>
         </div>
         <div id="wrapper">
-          <div id="group-1">
+          <div id="group-1" class="box-1" v-scroll="handleScroll">
               <h2 id="about"><b class="sub-title">SAC</b>  <span style="font-size: 0.8rem">とは</span></h2>
               <p>
                 スノーボードが大好き！うまくなりたい！という気持ちの強い人たちの集まりです。<br/>
@@ -142,7 +149,7 @@ div[id^="group"] table {
             </p>
             <img src="../assets/takatue.jpg" width="100%" class="pt-4" />
           </div>
-          <div id="group-2">
+          <div id="group-2" class="box-2" v-scroll="handleScroll">
               <h2 id="schedule" style="margin-bottom: 12px"><b class="sub-title">活動スケジュール</b></h2>
               <p class="pb-3">
                 参考までに２０２０年の講習会などのスケジュールを一部抜粋して載せます。<br/>
@@ -182,7 +189,7 @@ div[id^="group"] table {
                 </tr>
               </table>
           </div>
-          <div id="group-3">
+          <div id="group-3" class="box-3" v-scroll="handleScroll">
             <div style="margin-bottom: 12px">
               <h2 id="contact"><b class="sub-title">Contact US!</b></h2>
               <p>千葉スノーボードクラブはいつでも一緒に楽しく滑れるメンバーを募集しています！<br />
@@ -199,7 +206,32 @@ div[id^="group"] table {
 </template>
 
 <script>
+import Vue from 'vue'
+
+Vue.directive('scroll', {
+  inserted: function (el, binding) {
+      let f = function (evt) {
+          if (binding.value(evt, el)) {
+              window.removeEventListener('scroll', f)
+          }
+      }
+      window.addEventListener('scroll', f)
+  }
+})
+
 export default {
-    name: "main-component"
+  name: "main-component",
+  methods: {
+    handleScroll: function(evt, el) {
+      if (window.scrollY > 50) {
+        el.setAttribute(
+          "style",
+          "opacity: 1; transform: translate3d(0, -10px, 0)"
+        );
+      }
+      return window.scrollY > 100;
+    }
+  }
+
 }
 </script>
